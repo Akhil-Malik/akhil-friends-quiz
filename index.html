@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akhil's friends quiz</title>
+</head>
+<body>
+   <script> var readlineSync= require("readline-sync");
+    var score = 0;
+    var userName= readlineSync.question("What's your name? ");
+    console.log("Welcome",userName,"Do you know akhil? ");
+    var highScore = [{
+      name:"akhil",
+      score:"5"
+    },{
+      name:"nikhil",
+      score:"4"
+    }]
+    
+    function play(question,answer) {
+      userAnswer= readlineSync.question(question) 
+      if (userAnswer === answer){
+        console.log("You were right!");
+        score++;
+      } else{
+        console.log("You were wrong!")
+        score;
+      }
+      console.log("Your current score is ", score);
+      console.log("--------------------------------------")
+    }
+    var questions = [ {
+      question:"where do i live? ",
+      answer:"rohtak"
+    },{
+      question:"who is my fav. superhero? ",
+      answer:"Hanuman"
+    },{
+      question:"which sport i like the most? ",
+      answer:"cricket"
+    },{
+      question:"what am i trying to do now-a-days? ",
+      answer:"trying to do coding"
+    },{
+      question:"what i want to become in life? ",
+      answer:"successful man"
+    }]
+    for (var i=0; i<questions.length;i++){
+      var currentQuestion=questions[i];
+      play(currentQuestion.question,currentQuestion.answer)
+    }
+    console.log("yay! Your final score is ",score)
+    console.log("highest scorer",highScore[1])</script>
+</body>
+</html>
